@@ -1,0 +1,12 @@
+services:
+  videosummarize:
+    build: .
+    ports:
+      - "11000:5000"
+    volumes:
+      - .:/container-storage
+    environment:
+      - GOOGLE_API_KEY=
+networks:  
+  default:    
+    name: summary_network
