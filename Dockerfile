@@ -7,5 +7,5 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-#flask --app sample.py run
-CMD [ "flask", "--app" , "sample.py", "run", "--host=0.0.0.0"]
+#flask --app app.py run
+CMD [ "flask", "--app" , "app.py", "run", "--host=0.0.0.0"]
