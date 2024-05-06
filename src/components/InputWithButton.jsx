@@ -42,16 +42,16 @@ export const InputWithButton = () => {
 
 
    return (
-    <div className='flex w-full justify-center max-w-[24rem] pt-20'>
-       <div className='relative flex items-center w-3/4 max-w-[36rem]'>
+    <div className='flex flex-col items-center w-full pt-32'>
+       <div className='relative flex items-center w-3/4 max-w-[36rem] bg-white rounded-lg shadow p-4'>
             <Input
                 type='url'
                 placeholder='Enter link here...'
                 value={url}
                 onChange={onChange}
-                className='w-full'
+                className='w-full border-gray-300 rounded-md bg-clip-padding bg-origin-padding'
                 containerProps={{
-                    className: "min-w-20 top-1"
+                    className: "w-full"
                 }}
             />
 
@@ -60,7 +60,7 @@ export const InputWithButton = () => {
                 color={url? "gray":"blue-gray"}
                 disabled={!url}
                 aria-label="Submit URL"
-                className="right-24 top-1 mr-2 rounded"
+                className="ml-4"
                 onClick={handleSubmit}
             >
                 Submit
