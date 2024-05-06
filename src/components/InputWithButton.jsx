@@ -15,24 +15,24 @@ export const InputWithButton = () => {
             formData.append('url', url);
 
             // ----------------- Avoding the API call ---------------------- 
-            // const response = await fetch('http://localhost:5000/api/summary', {
-            //   method: 'POST',
-            //   headers: {
+            const response = await fetch('http://172.18.0.2:5000/api/summary', {
+              method: 'POST',
+              headers: {
                 
-            //   },
-            //   body: formData,
-            // });
+              },
+              body: formData,
+            });
       
-            // // 3. Handle the response
-            // if (!response.ok) {
-            //   throw new Error(`API request failed with status ${response.status}`);
-            // }
+            // 3. Handle the response
+            if (!response.ok) {
+              throw new Error(`API request failed with status ${response.status}`);
+            }
       
-            // const responseData = await response.json();
-            // setSummary(responseData.result) // Process or display the response data
-            // console.log(responseData.result)
+            const responseData = await response.json();
+            setSummary(responseData.result) // Process or display the response data
+            console.log(responseData.result)
             
-            setSummary("seless and driven by conficting national ideologies. - Life has no inherent meaning unless it is eternal. - Sasuke and his brother share a deep bond, despite their differences. - The Uchiha clan faces discrimination and persecution due to rumors of causing the Nine-Tails incident. - The Uchiha clan plans a coup against the village, but it is stopped by Itachi Uchiha. - Itachi chooses to sacrifice his life to protect the village and his brother. - True peace cannot be achieved through violence but through understanding and cooperation. - The Uchiha clan's resentment towards the village stems from their fear and perception of oppression. - Sasuke undergoes a journey to avenge his clan and understand the complexities of the shinobi world. - Itachi's sacrifice and enduring bond with Sasuke serve as a testament to the power of love and perseverance.")
+            // setSummary("seless and driven by conficting national ideologies. - Life has no inherent meaning unless it is eternal. - Sasuke and his brother share a deep bond, despite their differences. - The Uchiha clan faces discrimination and persecution due to rumors of causing the Nine-Tails incident. - The Uchiha clan plans a coup against the village, but it is stopped by Itachi Uchiha. - Itachi chooses to sacrifice his life to protect the village and his brother. - True peace cannot be achieved through violence but through understanding and cooperation. - The Uchiha clan's resentment towards the village stems from their fear and perception of oppression. - Sasuke undergoes a journey to avenge his clan and understand the complexities of the shinobi world. - Itachi's sacrifice and enduring bond with Sasuke serve as a testament to the power of love and perseverance.")
         } catch (error) {
             console.error('API request error:', error.message); // Handle errors appropriately
           }
